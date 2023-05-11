@@ -1,0 +1,78 @@
+# App
+APP:
+  PORT: 6869
+
+# Metrics
+PROMETHEUS:
+  PROM_METRICS_FREQUENCY: 5
+
+# database
+MONGO:
+  DB_NAME: "qna"
+  COLLECTION_NAME: ""
+  URL: ""
+  CONFIG_STR: "?replicaSet=rs1&authSource=admin"
+
+# Kafka
+KAFKA:
+  BROKERS_ADDR: ""
+  TOPIC: ""
+  GROUP_ID: ""
+
+# API Message Limit
+API_MESSAGE_LIMIT: 500
+
+# whatsapp consumer
+WHATSAPP_CONSUMER:
+  GET_MESSAGE_LIMIT: 50
+  GET_MESSAGE_FREQUENCY_SECONDS: 2
+  UPDATE_STALE_MESSAGES_FREQUENCY_SECONDS: 15
+  MAX_WHATSAPP_PUSH_RETRY_AVAILABLE: 2
+
+# whatsapp api
+WHATSAPP_API:
+  TIMEOUT_SECONDS: 30
+  RETRY_COUNT: 2
+  RETRY_WAIT_TIME: 5
+  RETRY_MAX_WAIT_TIME: 10
+  BASE_URL: "https://graph.facebook.com/v16.0"
+  POST_ENDPOINT: "messages"
+
+# Webhook Fallback
+WEBHOOK_FALLBACK: true
+
+# OpenAI / ChatGPT
+OPEN_AI:
+  TOKEN: "" # openai api key
+  TRAINING: ""
+
+# services
+CLIENTS:
+  - NAME: "SYSTEM"
+    API_KEY: "03a2bb524c787a4d596b6311136737e30634ecb15323f82b136fad3fdbc43e58"
+    IDENTIFIER: "9c9b6d8388dede5d2f3f20852601119db9ad056849c7f3b297a64606772f56ce"
+    ORGANIZATION: "system"
+    INTENTS:
+      - "OTHERS"
+  - NAME: "TESTING_CLIENT"
+    API_KEY: "c12012c16b841181db5441b161550e0d69f701c407f5f8b0067bc816f1e2aa49"
+    IDENTIFIER: "52e3cf1a8222b181a61da62e2aa6175c7adb0f5e1ef07172ae9ce53542eed092"
+    ORGANIZATION: "org_one"
+    INTENTS:
+      - "OTHERS"
+
+# whatsapp accounts config
+WHATSAPP_ACCOUNTS_CONFIG:
+  - NAME: "GPT_BOT"
+    PHONE_ID: ""
+    NUMBER: ""
+    WA_HEADER: "9698737995d21529c246afbaff916e37f5644e9c092d2454fbfaa21359d66c2d"
+    IDENTIFIER: "5eebd2df394fa1749028680f38feeb0826e1be13d46589bae3c319ed088d01e3"
+    ACCESS_TOKEN: ""
+    OUTGOING_ONLY: false # if false then it means communication is 2 way
+    ORGANIZATION: "org_one"
+    CLIENTS:
+      - "52e3cf1a8222b181a61da62e2aa6175c7adb0f5e1ef07172ae9ce53542eed092"
+
+WHATSAPP_VERIFY_TOKENS:
+  - TOKEN: "" # number token
